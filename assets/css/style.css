@@ -1,0 +1,196 @@
+/* ===========================================================================
+   Factorio Ratios — tema oscuro industrial
+   Se apoya en Bootstrap 5 (CDN) y sobreescribe lo necesario.
+   =========================================================================== */
+
+:root {
+    --fa-bg:        #1c1b19;
+    --fa-panel:     #2b2926;
+    --fa-panel-2:   #34322e;
+    --fa-border:    #4a463f;
+    --fa-orange:    #ff9d0a;
+    --fa-orange-d:  #e58a00;
+    --fa-text:      #e8e0cf;
+    --fa-muted:     #a89f8c;
+    --fa-green:     #6fbf3b;
+    --fa-red:       #d9483b;
+    --fa-blue:      #4aa3e0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    background:
+        linear-gradient(rgba(20,19,17,.94), rgba(20,19,17,.94)),
+        repeating-linear-gradient(45deg, #232220 0 22px, #1e1d1b 22px 44px);
+    color: var(--fa-text);
+    font-family: "Segoe UI", "Titillium Web", system-ui, sans-serif;
+    min-height: 100vh;
+}
+
+/* ---- Encabezado ---- */
+.fa-header {
+    border-bottom: 3px solid var(--fa-orange);
+    background: linear-gradient(180deg, #2f2c28, #211f1c);
+    box-shadow: 0 4px 18px rgba(0,0,0,.5);
+}
+.fa-header h1 {
+    font-weight: 800;
+    letter-spacing: .5px;
+    margin: 0;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+}
+.fa-header .badge-sa {
+    background: var(--fa-orange);
+    color: #1c1b19;
+    font-weight: 700;
+    border-radius: 4px;
+}
+.fa-header .lead { color: var(--fa-muted); margin: 0; }
+
+/* ---- Paneles / tarjetas ---- */
+.fa-panel {
+    background: var(--fa-panel);
+    border: 1px solid var(--fa-border);
+    border-radius: 8px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.03), 0 6px 16px rgba(0,0,0,.35);
+}
+.fa-panel .fa-panel-head {
+    background: linear-gradient(180deg, #3a3732, #2d2a26);
+    border-bottom: 1px solid var(--fa-border);
+    border-radius: 8px 8px 0 0;
+    padding: .7rem 1rem;
+    font-weight: 700;
+    letter-spacing: .3px;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.fa-panel .fa-panel-head .num {
+    color: var(--fa-orange);
+    font-weight: 800;
+}
+
+/* ---- Controles ---- */
+.form-label { color: var(--fa-muted); font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; }
+.form-select, .form-control {
+    background: #211f1c;
+    border: 1px solid var(--fa-border);
+    color: var(--fa-text);
+}
+.form-select:focus, .form-control:focus {
+    background: #211f1c;
+    color: var(--fa-text);
+    border-color: var(--fa-orange);
+    box-shadow: 0 0 0 .2rem rgba(255,157,10,.2);
+}
+.form-select option, .form-select optgroup { background: #2b2926; color: var(--fa-text); }
+
+.btn-fa {
+    background: linear-gradient(180deg, var(--fa-orange), var(--fa-orange-d));
+    border: 1px solid #b06f00;
+    color: #1c1b19;
+    font-weight: 800;
+    letter-spacing: .3px;
+    box-shadow: 0 2px 0 #8f5a00;
+}
+.btn-fa:hover { background: var(--fa-orange); color: #1c1b19; }
+.btn-fa:active { transform: translateY(1px); box-shadow: 0 1px 0 #8f5a00; }
+
+.btn-group .btn-check:checked + .btn-outline-fa {
+    background: var(--fa-orange);
+    color: #1c1b19;
+    border-color: var(--fa-orange);
+    font-weight: 700;
+}
+.btn-outline-fa {
+    color: var(--fa-text);
+    border-color: var(--fa-border);
+}
+.btn-outline-fa:hover { background: var(--fa-panel-2); color: var(--fa-text); }
+
+/* ---- Resultados ---- */
+.result-group-title {
+    color: var(--fa-orange);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    font-size: .82rem;
+    margin: 1.1rem 0 .5rem;
+    border-bottom: 1px dashed var(--fa-border);
+    padding-bottom: .3rem;
+}
+.res-row {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .45rem .6rem;
+    border-radius: 6px;
+    background: var(--fa-panel-2);
+    border: 1px solid var(--fa-border);
+    margin-bottom: .4rem;
+}
+.res-row .ico { font-size: 1.2rem; width: 1.6rem; text-align: center; flex: 0 0 auto; }
+.res-row .name { flex: 1 1 auto; }
+.res-row .qty {
+    font-weight: 800;
+    color: var(--fa-orange);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+.res-row .qty .exact { color: var(--fa-muted); font-weight: 500; font-size: .82em; }
+.res-row .sub { color: var(--fa-muted); font-size: .8rem; }
+
+.pill {
+    display: inline-block;
+    background: #211f1c;
+    border: 1px solid var(--fa-border);
+    border-radius: 999px;
+    padding: .05rem .55rem;
+    font-size: .78rem;
+    color: var(--fa-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---- Tarjetas de referencia ---- */
+.ref-card { height: 100%; }
+.ref-card .fa-panel-head { justify-content: space-between; }
+.ref-card .ratio-big {
+    color: var(--fa-orange);
+    font-weight: 800;
+    font-size: 1.05rem;
+    margin: 0;
+}
+.ref-card .body-txt { color: var(--fa-muted); font-size: .9rem; }
+.ref-card .row-line {
+    display: flex; justify-content: space-between; gap: .5rem;
+    border-top: 1px dashed var(--fa-border);
+    padding: .35rem 0;
+    font-size: .9rem;
+}
+.ref-card .row-line b { color: var(--fa-text); }
+
+/* ---- Sección "cómo funciona" ---- */
+.formula {
+    background: #211f1c;
+    border: 1px solid var(--fa-border);
+    border-left: 4px solid var(--fa-orange);
+    border-radius: 6px;
+    padding: .9rem 1rem;
+    font-family: "Consolas", monospace;
+    color: var(--fa-text);
+    overflow-x: auto;
+}
+.formula .hl { color: var(--fa-orange); font-weight: 700; }
+
+.anchor-nav a { color: var(--fa-muted); text-decoration: none; font-weight: 600; }
+.anchor-nav a:hover { color: var(--fa-orange); }
+
+footer.fa-footer {
+    border-top: 1px solid var(--fa-border);
+    color: var(--fa-muted);
+    font-size: .85rem;
+}
+footer.fa-footer a { color: var(--fa-orange); text-decoration: none; }
+
+.empty-hint { color: var(--fa-muted); font-style: italic; }
